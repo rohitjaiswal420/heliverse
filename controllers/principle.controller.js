@@ -35,9 +35,9 @@ export const principlevalidation = async(req,res)=>{
 
     try {
 
-    
+  
     const principle=await Principles.findOne({email});
-    
+   
     if(principle && email===principle.email && password===principle.password)
     {
          res.status(200).send(true);
@@ -45,9 +45,10 @@ export const principlevalidation = async(req,res)=>{
     else{
 
         res.send(false);
+       
     }
 
-     console.log(principle.email,principle.password)
+     
     
     
  } catch (error) {

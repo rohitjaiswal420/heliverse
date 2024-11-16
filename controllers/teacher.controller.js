@@ -6,7 +6,7 @@ export const createteacher=async(req,res)=>{
    const{name,email,classname}=req.body;
    try {
     
-    console.log(name,email,classname)
+    
     const checkteacher=await Teachers.findOne({email});
     
     if(checkteacher===null)
@@ -63,7 +63,7 @@ export const teachervalidation = async(req,res)=>{
 
     try {
 
-    console.log(email);
+   
     const teacher=await Teachers.findOne({email});
     
     if(teacher && email===teacher.email && name===teacher.name)
